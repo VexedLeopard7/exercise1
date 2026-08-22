@@ -80,11 +80,11 @@ function main() {
     // Draw a rectangle with pixels
     var c = new Color(0, 0, 0, 255); // the color at the pixel: black opaque
     
-    for (var x = 0; x < 24; x++) {
-        for (var y = 0; y < 24; y++) {
-            // Each square is 3 pixels wide and 3 pixels high
-            var squareX = Math.floor(x / 3);
-            var squareY = Math.floor(y / 3);
+    for (var x = 0; x < 72; x++) {
+        for (var y = 0; y < 72; y++) {
+            // Each square is 9 pixels wide and 9 pixels high
+            var squareX = Math.floor(x / 9);
+            var squareY = Math.floor(y / 9);
             
             // Alternate red and black squares
             if ((squareX + squareY) % 2 == 0) {
