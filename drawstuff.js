@@ -85,7 +85,7 @@ function main() {
             if ((y / 3) % 2 == 0) {
                 console.log("draw at " + x + " " + y);
                 if ((x / 3) % 2 == 0) {
-                    color.change(255, 0, 0, 255);
+                    c.change(255, 0, 0, 255);
                     drawPixel(imagedata, x, y, c);  
                     console.log("Color: red");
                 } else {
@@ -97,12 +97,12 @@ function main() {
                     drawPixel(imagedata, x, y, c); 
                     console.log("Color: black");
                 } else {
-                    color.change(255, 0, 0, 255);
+                    c.change(255, 0, 0, 255);
                     drawPixel(imagedata, x, y, c);
                     console.log("Color: red");
                 }   
             }
-            color.change(0, 0, 0, 255);
+            c.change(0, 0, 0, 255);
         }
     
     context.putImageData(imagedata, 0, 0); // display the image in the context
