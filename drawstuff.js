@@ -80,30 +80,22 @@ function main() {
     // Draw a rectangle with pixels
     var c = new Color(0, 0, 0, 255); // the color at the pixel: black opaque
     
-    for (var x = 0; x < 24; x++) 
+    for (var x = 0; x < 24; x++) {
         for (var y = 0; y < 24; y++) {
-            if ((y / 3) % 2 == 0) {
-                console.log("draw at " + x + " " + y);
-                if ((x / 3) % 2 == 0) {
-                    c.change(255, 0, 0, 255);
-                    drawPixel(imagedata, x, y, c);  
-                    console.log("Color: red");
-                } else {
-                    drawPixel(imagedata, x, y, c);
-                    console.log("Color: black");
-                }   
+            // Each square is 3 pixels wide and 3 pixels high
+            var squareX = Math.floor(x / 3);
+            var squareY = Math.floor(y / 3);
+            
+            // Alternate red and black squares
+            if ((squareX + squareY) % 2 == 0) {
+                c.change(255, 0, 0, 255); // red
             } else {
-                if ((x / 3) % 2 == 0) {
-                    drawPixel(imagedata, x, y, c); 
-                    console.log("Color: black");
-                } else {
-                    c.change(255, 0, 0, 255);
-                    drawPixel(imagedata, x, y, c);
-                    console.log("Color: red");
-                }   
+                c.change(0, 0, 0, 255); // black
             }
-            c.change(0, 0, 0, 255);
+            
+            drawPixel(imagedata, x, y, c);
         }
+    }
     
     context.putImageData(imagedata, 0, 0); // display the image in the context
 }
